@@ -9,10 +9,11 @@ namespace InventorCarrier
 {
     internal class Pant : Things
     {
-        private string Name { get; set;}
         public Pant( string color, string material, int weight) : base( color, material,  weight) 
         {
             Name = "Брюки";
         }
+
+        private string Name { get; set;}
     }
 }

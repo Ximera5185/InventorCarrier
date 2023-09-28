@@ -8,11 +8,11 @@ namespace InventorCarrier
 {
     internal class Screwdriver:Things
     {
-        private string Name { get; set; }
-
         public Screwdriver(string color, string material, int weight) : base(color, material, weight) 
         {
             Name = "Отвертка";
         }
+
+        private string Name { get; set; }
     }
 }
