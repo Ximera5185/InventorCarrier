@@ -10,6 +10,10 @@ namespace InventorCarrier
     {
         static void Main(string [] args)
         {
+            Jacket jacket = new Jacket("Серый","Ткань",200,43);
+            
+
+            Pant pant = new Pant();
         }
     }
 }
