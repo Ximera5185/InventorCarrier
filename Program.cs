@@ -10,9 +10,17 @@ namespace InventorCarrier
     {
         static void Main(string [] args)
         {
-            Jacket jacket = new Jacket("Серый","Ткань",200);
-            
-            Pant pant = new Pant("Черные","Трикотаж",200);
+            Player player = new Player();
+
+            Things thing;
+
+            thing = player.FindAnItem();
+
+            player.AddItemToInventory(thing);
+
+            player.ShowList();
+
+            Console.ReadKey();
         }
     }
 }

@@ -8,11 +8,6 @@ namespace InventorCarrier
 {
     internal class Helmet:Things
     {
-        public Helmet(string color, string material, int weight) : base(color, material, weight)
-        {
-            Name = "Каска";
-        }
-
-        private string Name { get; set; }
+        public Helmet(string name, string color, string material, int weight) : base(name, color, material, weight) { }
     }
 }

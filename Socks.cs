@@ -8,11 +8,6 @@ namespace InventorCarrier
 {
     internal class Socks: Things
     {
-        public Socks(string color, string material, int weight) : base(color, material, weight)
-        {
-            Name = "Носки";
-        }
-
-        private string Name { get; set; }
+        public Socks(string name, string color, string material, int weight) : base(name,color, material, weight) { }
     }
 }

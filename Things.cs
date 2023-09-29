@@ -8,8 +8,10 @@ namespace InventorCarrier
 {
     internal class Things
     {
-        protected Things( string color, string material, int weight)
+        protected Things(string name, string color, string material, int weight)
         {
+            Name = name;
+
             Color = color;
 
             Material = material;
@@ -17,10 +19,12 @@ namespace InventorCarrier
             Weight = weight;
         }
 
-        private string Color { get; set; }
+        public string Name { get; protected set; }
 
-        private string Material { get; set; }
+        public string Color { get; protected set; }
 
-        private int Weight { get; set; }
+        public string Material { get; protected set; }
+
+        public int Weight { get; protected set; }
     }
 }

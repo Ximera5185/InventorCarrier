@@ -8,17 +8,23 @@ namespace InventorCarrier
 {
     internal class Inventory
     {
-        Array [] boxes = new Array [10] 
-        {
-        string [] ,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1 };
+        
+        public List<Things> jackets = new List<Things>();
+
+        public List<Things> pants = new List<Things>();
+
+        public List<Things> hats = new List<Things>();
+
+        public List<Things> Socks = new List<Things>();
+
+        public List<Things> shirts = new List<Things>();
+
+        public List<Things> hammers = new List<Things>();
+
+        public  List<Things> helmets = new List<Things>();
+
+        public List<Things> screwdrivers = new List<Things>();
+
+        
     }
 }

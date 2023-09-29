@@ -8,11 +8,6 @@ namespace InventorCarrier
 {
     internal class Hammer:Things
     {
-        public Hammer(string color, string material, int weight) : base(color, material, weight)
-        {
-            Name = "Молоток";
-        }
-
-        private string Name { get; set; }
+        public Hammer(string name, string color, string material, int weight) : base(name,color, material, weight) { }
     }
 }
