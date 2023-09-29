@@ -56,6 +56,7 @@
     <Compile Include="Shirt.cs" />
     <Compile Include="Socks.cs" />
     <Compile Include="Things.cs" />
+    <Compile Include="UserMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

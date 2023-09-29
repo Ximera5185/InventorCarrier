@@ -18,7 +18,7 @@ namespace InventorCarrier
 
             player.AddItemToInventory(thing);
 
-            player.ShowList();
+            player.ShowBackpack();
 
             Console.ReadKey();
         }

@@ -11,14 +11,14 @@ namespace InventorCarrier
     {
         private Inventory inventory = new Inventory();
 
-        public void AddItemToInventory(Things thing) 
+        public void AddItemToInventory(Things thing)
         {
             if (thing.Name == "Отвертка")
             {
                 inventory.screwdrivers.Add(thing);
             }
             if (thing.Name == "Каска")
-            { 
+            {
                 inventory.helmets.Add(thing);
             }
             if (thing.Name == "Молоток")
@@ -30,8 +30,8 @@ namespace InventorCarrier
                 inventory.shirts.Add(thing);
             }
             if (thing.Name == "Носки")
-            { 
-                inventory.Socks.Add(thing);
+            {
+                inventory.socks.Add(thing);
             }
             if (thing.Name == "Шапка")
             {
@@ -47,72 +47,57 @@ namespace InventorCarrier
             }
         }
 
-        public Things FindAnItem() 
+        public Things FindAnItem()
         {
             Things thing = null;
 
             int minValue = 1;
             int maxValue = 10;
 
-           Random random = new Random();
+            Random random = new Random();
 
-            switch (random.Next(minValue,maxValue))
+            switch (random.Next(minValue, maxValue))
             {
-                case 1:  thing =  new Screwdriver("Отвертка", "Синий", "Метал", 200);
+                case 1:
+                    thing = new Screwdriver("Отвертка", "Синий", "Метал", 200);
                     break;
-                case 2:  thing = new Helmet("Каска", "Зеленый", "Метал", 200);
+                case 2:
+                    thing = new Helmet("Каска", "Зеленый", "Метал", 200);
                     break;
-                case 3:  thing = new Hammer("Молоток", "Черный", "Метал", 200);
+                case 3:
+                    thing = new Hammer("Молоток", "Черный", "Метал", 200);
                     break;
-                case 4:  thing = new Shirt("Рубашка", "Белая", "Ткань", 200);
+                case 4:
+                    thing = new Shirt("Рубашка", "Белая", "Ткань", 200);
                     break;
-                case 5:  thing = new Socks("Носки", "Черный", "Ткань", 200);
+                case 5:
+                    thing = new Socks("Носки", "Черный", "Ткань", 200);
                     break;
-                case 6:  thing = new Hat("Шапка", "Жолтый", "Ткань", 200);
+                case 6:
+                    thing = new Hat("Шапка", "Жолтый", "Ткань", 200);
                     break;
-                case 7:  thing = new Pant("Брюки", "Синий", "Ткань", 200);
+                case 7:
+                    thing = new Pant("Брюки", "Синий", "Ткань", 200);
                     break;
-                case 9:  thing = new Jacket("Куртка", "Черный", "Ткань", 200);
+                case 9:
+                    thing = new Jacket("Куртка", "Черный", "Ткань", 200);
                     break;
             }
 
             return thing;
         }
 
-        public void ShowList() 
+        public void ShowBackpack()
         {
-            foreach (var item in inventory.screwdrivers)
-            {
-                Console.WriteLine(item.Name);
-            }
-            foreach (var item in inventory.helmets)
-            {
-                Console.WriteLine(item.Name);
-            }
-            foreach (var item in inventory.hammers)
-            {
-                Console.WriteLine(item.Name);
-            }
-            foreach (var item in inventory.shirts)
-            {
-                Console.WriteLine(item.Name);
-            }
-            foreach (var item in inventory.Socks)
-            {
-                Console.WriteLine(item.Name);
-            }
-            foreach (var item in inventory.hats)
-            {
-                Console.WriteLine(item.Name);
-            }
-            foreach (var item in inventory.pants)
-            {
-                Console.WriteLine(item.Name);
-            }
-            foreach (var item in inventory.jackets)
-            {
-                Console.WriteLine(item.Name);
-            }
+            Console.WriteLine(
+            $"Отвертки {inventory.screwdrivers.Count} / {inventory.MaximumCapacity}\n" +
+            $"Каски  {inventory.helmets.Count} / {inventory.MaximumCapacity}\n" +
+            $"Молотки {inventory.hammers.Count} / {inventory.MaximumCapacity}\n" +
+            $"Рубашки {inventory.shirts.Count} / {inventory.MaximumCapacity}\n" +
+            $"Носки {inventory.socks.Count} /  {inventory.MaximumCapacity} \n" +
+            $"Шапки {inventory.hats.Count} /  {inventory.MaximumCapacity} \n" +
+            $"Брюки {inventory.pants.Count} /  {inventory.MaximumCapacity} \n" +
+            $"Куртки {inventory.jackets.Count} / {inventory.MaximumCapacity}");
         }
     }
 }
