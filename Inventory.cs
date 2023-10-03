@@ -8,26 +8,31 @@ namespace InventorCarrier
 {
     internal class Inventory
     {
-        public Inventory() 
+        private Things [] _slots;
+
+        public Inventory()
         {
-            MaximumCapacity = 10;
+            _slots = new Things [10];
         }
-        public int MaximumCapacity { get;private set; }
 
-        public List<Things> jackets = new List<Things>();
+        public void AddItem(int index, Things things) 
+        {
+            _slots [index] = things;
+        }
 
-        public List<Things> pants = new List<Things>();
+        public void ShowInventory()
+        {
+            int counter = 0;
 
-        public List<Things> hats = new List<Things>();
+            foreach (Things item in _slots)
+            {
+                counter++;
 
-        public List<Things> socks = new List<Things>();
-
-        public List<Things> shirts = new List<Things>();
-
-        public List<Things> hammers = new List<Things>();
-
-        public  List<Things> helmets = new List<Things>();
-
-        public List<Things> screwdrivers = new List<Things>();   
+                if (item!=null)
+                {
+                    Console.WriteLine ($"Вещь: {item.Name} цвет - {item.Color} Материал - {item.Material} Вес - {item.Weight} Солт в инвенторе {counter}" );
+                }   
+            }
+        }
     }
 }

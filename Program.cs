@@ -12,13 +12,11 @@ namespace InventorCarrier
         {
             Player player = new Player();
 
-            Things thing;
+            Things thing = new Things("Куртка","Синяя","Ткань",200);
 
-            thing = player.FindAnItem();
+            player._inventory.AddItem(0,player.AddItemToInventory(thing));
 
-            player.AddItemToInventory(thing);
-
-            player.ShowBackpack();
+            player._inventory.ShowInventory();
 
             Console.ReadKey();
         }

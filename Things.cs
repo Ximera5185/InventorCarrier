@@ -8,7 +8,7 @@ namespace InventorCarrier
 {
     internal class Things
     {
-        protected Things(string name, string color, string material, int weight)
+        public Things(string name, string color, string material, int weight)
         {
             Name = name;
 
