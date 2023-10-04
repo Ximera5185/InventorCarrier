@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InventorCarrier
 {
@@ -15,9 +11,35 @@ namespace InventorCarrier
             _slots = new Things [10];
         }
 
-        public void AddItem(int index, Things things) 
+        public void AddItem( Things things) 
         {
-            _slots [index] = things;
+
+            if (SearchIndex(out int index) == true)
+            {
+                 _slots [index] = things;
+            }
+            else
+            {
+                Console.WriteLine("Все ячейки заполнены");
+            }
+        }
+
+        private bool SearchIndex(out int index) 
+        {
+            for (int i = 0; i < _slots.Length; i++)
+            {
+                if (_slots [i] == null)
+                {
+                    index = i;
+                    
+                    return true;
+                    
+                }
+            }
+
+            index = 0;
+
+            return  false;
         }
 
         public void ShowInventory()

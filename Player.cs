@@ -9,11 +9,16 @@ namespace InventorCarrier
 {
     internal class Player
     {
-        public Inventory _inventory = new Inventory();
+        private Inventory _inventory = new Inventory();
         
-        public Things AddItemToInventory(Things thing)
+        public void AddItemToInventory(Things thing)
         {
-            return thing;
+            _inventory.AddItem(thing);
+        }
+
+        public void ShowInventory() 
+        {
+            _inventory.ShowInventory();
         }
     }
 }
