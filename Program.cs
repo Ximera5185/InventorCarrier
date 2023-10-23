@@ -12,6 +12,11 @@ namespace InventorCarrier
     {
         static void Main(string [] args)
         {
+            const string CreateThingMenu = "1";
+            const string AddThingToInventoryMenu = "2";
+            const string RemoveThingFromInventoryMenu = "3";
+            const string ProgrammExitMenu = "4";
+
             Player player = new Player();
 
             Things thing = null;
@@ -28,27 +33,27 @@ namespace InventorCarrier
 
                 ShowThing(thing);
 
-                Console.WriteLine("Для создания вещи введите 1\n" +
-            "Для добавления вещи в инвентарь введите 2\n" +
-            "Для удаления вещи из инвенторя введите 3\n" +
-            "Для выхода из программы введите 4");
+                Console.WriteLine($"Для создания вещи введите {CreateThingMenu}\n" +
+            $"Для добавления вещи в инвентарь введите {AddThingToInventoryMenu}\n" +
+            $"Для удаления вещи из инвенторя введите {RemoveThingFromInventoryMenu}\n" +
+            $"Для выхода из программы введите {ProgrammExitMenu}");
 
                 inputUser = Console.ReadLine();
 
                 switch (inputUser)
                 {
-                    case "1":
+                    case CreateThingMenu:
                         thing = CreateThing();
                         break;
-                    case "2":
+                    case AddThingToInventoryMenu:
                         player.AddItemToInventory(thing);
                         thing = null;
                         break;
-                        case "3":
+                    case RemoveThingFromInventoryMenu:
                         player.RemoveItemFromInventory();
                         break;
-                    case "4":
-                    isProgrammWork = false;
+                    case ProgrammExitMenu:
+                        isProgrammWork = false;
                         break;
                 }
             }
@@ -64,10 +69,7 @@ namespace InventorCarrier
                 Console.WriteLine($"Вещь пока не создана");
             }
         }
-        static void ShowMenu()
-        {
 
-        }
         static Things CreateThing()
         {
             string nameThing = "";
