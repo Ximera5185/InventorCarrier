@@ -17,8 +17,7 @@ namespace InventorCarrier
         }
 
         public void RemoveItemFromInventory() 
-        {
-            
+        {  
             Console.WriteLine("Введите номер слота для удаления вещи ");
 
             int index = Convert.ToInt32(Console.ReadLine());

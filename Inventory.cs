@@ -46,6 +46,7 @@ namespace InventorCarrier
                 }
             }
         }
+
         private bool SearchIndex(out int index)
         {
             for (int i = 0; i < _slots.Length; i++)
