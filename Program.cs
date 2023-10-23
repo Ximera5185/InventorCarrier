@@ -30,7 +30,8 @@ namespace InventorCarrier
 
                 Console.WriteLine("Для создания вещи введите 1\n" +
             "Для добавления вещи в инвентарь введите 2\n" +
-            "Для удаления вещи из инвенторя введите 3");
+            "Для удаления вещи из инвенторя введите 3\n" +
+            "Для выхода из программы введите 4");
 
                 inputUser = Console.ReadLine();
 
@@ -46,16 +47,11 @@ namespace InventorCarrier
                         case "3":
                         player.RemoveItemFromInventory();
                         break;
+                    case "4":
+                    isProgrammWork = false;
+                        break;
                 }
-
-
             }
-
-
-
-            player.ShowInventory();
-
-            Console.ReadKey();
         }
         static void ShowThing(Things thing)
         {
