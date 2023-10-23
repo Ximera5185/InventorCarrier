@@ -16,6 +16,18 @@ namespace InventorCarrier
             _inventory.AddItem(thing);
         }
 
+        public void RemoveItemFromInventory() 
+        {
+            
+            Console.WriteLine("Введите номер слота для удаления вещи ");
+
+            int index = Convert.ToInt32(Console.ReadLine());
+
+            index--;
+
+            _inventory.RemoveItem(index);
+        }
+
         public void ShowInventory() 
         {
             _inventory.ShowInventory();

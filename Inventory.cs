@@ -11,50 +11,99 @@ namespace InventorCarrier
             _slots = new Things [10];
         }
 
-        public void AddItem( Things things) 
+        public void AddItem(Things things)
         {
-
-            if (SearchIndex(out int index) == true)
+            if (things != null)
             {
-                 _slots [index] = things;
+                if (SearchIndex(out int index) == true)
+                {
+                    _slots [index] = things;
+                }
+                else
+                {
+                    Console.WriteLine("Все ячейки заполнены");
+                }
             }
             else
             {
-                Console.WriteLine("Все ячейки заполнены");
+                Console.Clear();
+                Console.WriteLine("Создайте вещь для добовления в инвентарь");
+                Console.ReadKey();
             }
         }
 
-        private bool SearchIndex(out int index) 
+        public void RemoveItem(int index)
+        {
+            for (int i = 0; i < _slots.Length; i++)
+            {
+                if (i == index)
+                {
+                    if (_slots[i]!=null)
+                    {
+                        _slots [i] = null;
+                    }
+                    
+                }
+            }
+        }
+        private bool SearchIndex(out int index)
         {
             for (int i = 0; i < _slots.Length; i++)
             {
                 if (_slots [i] == null)
                 {
                     index = i;
-                    
+
                     return true;
-                    
+
                 }
             }
 
             index = 0;
 
-            return  false;
+            return false;
         }
 
         public void ShowInventory()
         {
-            int counter = 0;
+             int counter = 0;
+
+            int occupiedSlotsNumber = CountNumberOfBusySlots();
+
+            Console.WriteLine($"Инвентарь игрока: {occupiedSlotsNumber}/{_slots.Length}");
 
             foreach (Things item in _slots)
             {
-                counter++;
+              counter++;
 
-                if (item!=null)
+                if (item != null)
                 {
-                    Console.WriteLine ($"Вещь: {item.Name} цвет - {item.Color} Материал - {item.Material} Вес - {item.Weight} Солт в инвенторе {counter}" );
-                }   
+                    Console.WriteLine($"Слот {counter}: {item.Name} цвет - {item.Color} Материал - {item.Material} Вес - {item.Weight}");
+                }
+                else
+                {
+                    Console.WriteLine($"Слот {counter} пуст");
+                }
             }
+
+            Console.WriteLine();
+        }
+
+        private int CountNumberOfBusySlots() 
+        {
+            int minValue = 0;
+
+            int occupiedSlotsNumber = minValue;
+
+            for (int i = 0; i < _slots.Length; i++)
+            {
+                if (_slots[i]!=null)
+                {
+                    occupiedSlotsNumber++;
+                } 
+            }
+
+            return occupiedSlotsNumber;
         }
     }
 }
