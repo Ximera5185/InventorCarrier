@@ -34,16 +34,14 @@ namespace InventorCarrier
 
         public void RemoveItem(int index)
         {
-            for (int i = 0; i < _slots.Length; i++)
+            if (index < _slots.Length)
             {
-                if (i == index)
-                {
-                    if (_slots[i]!=null)
-                    {
-                        _slots [i] = null;
-                    }
-                    
-                }
+                _slots[index] = null;
+            }
+            else
+            {
+                Console.WriteLine("Вышли за приделы массива, введите любую клавишу");
+                Console.ReadKey();
             }
         }
 
