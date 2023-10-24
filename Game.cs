@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace InventorCarrier
 {
-    static class InventorySimulator
+    class Game
     {
-        static public void StartProgram() 
+        public void Run()
         {
             const string CreateThingMenu = "1";
             const string AddThingToInventoryMenu = "2";
@@ -57,7 +57,7 @@ namespace InventorCarrier
             }
         }
 
-        static private void ShowThing(Things thing)
+        private void ShowThing(Things thing)
         {
             if (thing != null)
             {
@@ -69,7 +69,7 @@ namespace InventorCarrier
             }
         }
 
-        static private Things CreateThing()
+        private Things CreateThing()
         {
             string nameThing = "";
 
@@ -98,12 +98,12 @@ namespace InventorCarrier
             return new Things(nameThing, colorThing, materialThing, weightThing);
         }
 
-        static private string EntryParameterThing(ref string parameter)
+        private string EntryParameterThing(ref string parameter)
         {
             return parameter = Console.ReadLine();
         }
 
-        static private int EntryParameterThing(ref int parameter)
+        private int EntryParameterThing(ref int parameter)
         {
             return parameter = Convert.ToInt32(Console.ReadLine());
         }

@@ -12,7 +12,9 @@ namespace InventorCarrier
     {
         static void Main(string [] args)
         {
-            InventorySimulator.StartProgram();
+            Game game = new Game();
+
+            game.Run();
         } 
     }
 }

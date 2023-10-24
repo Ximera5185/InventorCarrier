@@ -34,7 +34,9 @@ namespace InventorCarrier
 
         public void RemoveItem(int index)
         {
-            if (index < _slots.Length)
+            int minValue = 0;
+
+            if (index < _slots.Length && index>=minValue)
             {
                 _slots[index] = null;
             }

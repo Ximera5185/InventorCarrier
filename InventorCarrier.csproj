@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InventorySimulator.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
