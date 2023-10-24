@@ -19,12 +19,12 @@ namespace InventorCarrier
             Weight = weight;
         }
 
-        public string Name { get; protected set; }
+        public string Name { get; set; }
 
-        public string Color { get; protected set; }
+        public string Color { get; set; }
 
-        public string Material { get; protected set; }
+        public string Material { get; set; }
 
-        public int Weight { get; protected set; }
+        public int Weight { get; set; }
     }
 }
