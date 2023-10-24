@@ -13,7 +13,6 @@ namespace InventorCarrier
         static void Main(string [] args)
         {
             InventorySimulator.StartProgram();
-        }
-       
+        } 
     }
 }
